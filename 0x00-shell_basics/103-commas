@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1d . .. [[:digit:]]* [[:alpha:]]* .[[:digit:]]* .[[:alpha:]]* | LC_COLLATE=C sort -f | sed -e 's/[^\/]*$/&\//'
+ls -1a | sort -n | awk '{printf("%s,",$0)}' | sed 's/,$/\n/'
